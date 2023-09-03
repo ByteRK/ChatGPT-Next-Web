@@ -60,7 +60,7 @@ export const useUpdateStore = create<UpdateStore>()(
     (set, get) => ({
       versionType: "tag",
       lastUpdate: 0,
-      version: "unknown",
+      version: "v2.9.5",
       remoteVersion: "",
 
       lastUpdateUsage: 0,
