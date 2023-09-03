@@ -47,7 +47,7 @@ export const useUpdateStore = createPersistStore(
   {
     versionType: "tag" as VersionType,
     lastUpdate: 0,
-    version: "unknown",
+    version: "v2.9.5",
     remoteVersion: "",
     used: 0,
     subscription: 0,
