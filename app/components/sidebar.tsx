@@ -12,6 +12,7 @@ import MaskIcon from "../icons/mask.svg";
 import PluginIcon from "../icons/plugin.svg";
 import DragIcon from "../icons/drag.svg";
 import RickenIcon from "../icons/ricken.svg";
+import MoneyIcon from "../icons/money.svg";
 
 import Locale from "../locales";
 
@@ -177,6 +178,11 @@ export function SideBar(props: { className?: string }) {
           <div className={styles["sidebar-action"]}>
             <a href="http://ricken.cn" target="_blank" rel="noopener noreferrer">
               <IconButton icon={<RickenIcon />} shadow />
+            </a>
+          </div>
+          <div className={styles["sidebar-action"]}>
+            <a href="http://gptkey.ricken.cn" target="_blank" rel="noopener noreferrer">
+              <IconButton icon={<MoneyIcon />} shadow />
             </a>
           </div>
           {/* <div className={styles["sidebar-action"]}>
