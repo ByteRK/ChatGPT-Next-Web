@@ -671,8 +671,7 @@ export function Settings() {
           </ListItem>
 
           <ListItem
-            title="当前版本：v2.9.5(KK修改版)"
-            // title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
+            title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
             // subTitle={
             //   checkingUpdate
             //     ? Locale.Settings.Update.IsChecking

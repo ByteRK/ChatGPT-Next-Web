@@ -47,7 +47,7 @@ export const useUpdateStore = createPersistStore(
   {
     versionType: "tag" as VersionType,
     lastUpdate: 0,
-    version: "v2.9.5",
+    version: "当前版本：v2.9.5(KK修改版)",
     remoteVersion: "",
     used: 0,
     subscription: 0,
