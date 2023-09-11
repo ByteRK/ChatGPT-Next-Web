@@ -176,13 +176,13 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            <a href="http://ricken.cn" target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<RickenIcon />} shadow />
+            <a href="http://gptkey.ricken.cn" target="_blank" rel="noopener noreferrer">
+              <IconButton icon={<MoneyIcon />} shadow />
             </a>
           </div>
           <div className={styles["sidebar-action"]}>
-            <a href="http://gptkey.ricken.cn" target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<MoneyIcon />} shadow />
+            <a href="http://ricken.cn" target="_blank" rel="noopener noreferrer">
+              <IconButton icon={<RickenIcon />} shadow />
             </a>
           </div>
           {/* <div className={styles["sidebar-action"]}>
