@@ -150,7 +150,7 @@ export function SideBar(props: { className?: string }) {
           KK&apos;s ChatGPT
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          努力搬砖版
+          努力搬砖版~
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
