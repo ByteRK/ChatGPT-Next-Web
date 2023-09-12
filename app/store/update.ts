@@ -47,7 +47,7 @@ export const useUpdateStore = createPersistStore(
   {
     versionType: "tag" as VersionType,
     lastUpdate: 0,
-    version: "当前版本：v2.9.5(KK修改版)",
+    version: "v2.9.5(KK特供版)",
     remoteVersion: "",
     used: 0,
     subscription: 0,
@@ -63,62 +63,62 @@ export const useUpdateStore = createPersistStore(
     },
 
     async getLatestVersion(force = false) {
-      const versionType = get().versionType;
-      let version =
-        versionType === "date"
-          ? getClientConfig()?.commitDate
-          : getClientConfig()?.version;
+      // const versionType = get().versionType;
+      // let version =
+      //   versionType === "date"
+      //     ? getClientConfig()?.commitDate
+      //     : getClientConfig()?.version;
 
-      set(() => ({ version }));
+      // set(() => ({ version }));
 
-      const shouldCheck = Date.now() - get().lastUpdate > 2 * 60 * ONE_MINUTE;
-      if (!force && !shouldCheck) return;
+      // const shouldCheck = Date.now() - get().lastUpdate > 2 * 60 * ONE_MINUTE;
+      // if (!force && !shouldCheck) return;
 
-      set(() => ({
-        lastUpdate: Date.now(),
-      }));
+      // set(() => ({
+      //   lastUpdate: Date.now(),
+      // }));
 
-      try {
-        const remoteId = await getVersion(versionType);
-        set(() => ({
-          remoteVersion: remoteId,
-        }));
-        if (window.__TAURI__?.notification && isApp) {
-          // Check if notification permission is granted
-          await window.__TAURI__?.notification.isPermissionGranted().then((granted) => {
-            if (!granted) {
-              return;
-            } else {
-              // Request permission to show notifications
-              window.__TAURI__?.notification.requestPermission().then((permission) => {
-                if (permission === 'granted') {
-                  if (version === remoteId) {
-                    // Show a notification using Tauri
-                    window.__TAURI__?.notification.sendNotification({
-                      title: "ChatGPT Next Web",
-                      body: `${Locale.Settings.Update.IsLatest}`,
-                      icon: `${ChatGptIcon.src}`,
-                      sound: "Default"
-                    });
-                  } else {
-                    const updateMessage = Locale.Settings.Update.FoundUpdate(`${remoteId}`);
-                    // Show a notification for the new version using Tauri
-                    window.__TAURI__?.notification.sendNotification({
-                      title: "ChatGPT Next Web",
-                      body: updateMessage,
-                      icon: `${ChatGptIcon.src}`,
-                      sound: "Default"
-                    });
-                  }
-                }
-              });
-            }
-          });
-        }
-        console.log("[Got Upstream] ", remoteId);
-      } catch (error) {
-        console.error("[Fetch Upstream Commit Id]", error);
-      }
+      // try {
+      //   const remoteId = await getVersion(versionType);
+      //   set(() => ({
+      //     remoteVersion: remoteId,
+      //   }));
+      //   if (window.__TAURI__?.notification && isApp) {
+      //     // Check if notification permission is granted
+      //     await window.__TAURI__?.notification.isPermissionGranted().then((granted) => {
+      //       if (!granted) {
+      //         return;
+      //       } else {
+      //         // Request permission to show notifications
+      //         window.__TAURI__?.notification.requestPermission().then((permission) => {
+      //           if (permission === 'granted') {
+      //             if (version === remoteId) {
+      //               // Show a notification using Tauri
+      //               window.__TAURI__?.notification.sendNotification({
+      //                 title: "ChatGPT Next Web",
+      //                 body: `${Locale.Settings.Update.IsLatest}`,
+      //                 icon: `${ChatGptIcon.src}`,
+      //                 sound: "Default"
+      //               });
+      //             } else {
+      //               const updateMessage = Locale.Settings.Update.FoundUpdate(`${remoteId}`);
+      //               // Show a notification for the new version using Tauri
+      //               window.__TAURI__?.notification.sendNotification({
+      //                 title: "ChatGPT Next Web",
+      //                 body: updateMessage,
+      //                 icon: `${ChatGptIcon.src}`,
+      //                 sound: "Default"
+      //               });
+      //             }
+      //           }
+      //         });
+      //       }
+      //     });
+      //   }
+      //   console.log("[Got Upstream] ", remoteId);
+      // } catch (error) {
+      //   console.error("[Fetch Upstream Commit Id]", error);
+      // }
     },
 
     async updateUsage(force = false) {
