@@ -44,7 +44,7 @@ export const useUpdateStore = createPersistStore(
   {
     versionType: "tag" as VersionType,
     lastUpdate: 0,
-    version: "当前版本：v2.9.5(KK修改版)",
+    version: "v2.9.5(KK特供版)",
     remoteVersion: "",
     used: 0,
     subscription: 0,
@@ -60,30 +60,26 @@ export const useUpdateStore = createPersistStore(
     },
 
     async getLatestVersion(force = false) {
-      const versionType = get().versionType;
-      let version =
-        versionType === "date"
-          ? getClientConfig()?.commitDate
-          : getClientConfig()?.version;
-
-      set(() => ({ version }));
-
-      const shouldCheck = Date.now() - get().lastUpdate > 2 * 60 * ONE_MINUTE;
-      if (!force && !shouldCheck) return;
-
-      set(() => ({
-        lastUpdate: Date.now(),
-      }));
-
-      try {
-        const remoteId = await getVersion(versionType);
-        set(() => ({
-          remoteVersion: remoteId,
-        }));
-        console.log("[Got Upstream] ", remoteId);
-      } catch (error) {
-        console.error("[Fetch Upstream Commit Id]", error);
-      }
+      // const versionType = get().versionType;
+      // let version =
+      //   versionType === "date"
+      //     ? getClientConfig()?.commitDate
+      //     : getClientConfig()?.version;
+      // set(() => ({ version }));
+      // const shouldCheck = Date.now() - get().lastUpdate > 2 * 60 * ONE_MINUTE;
+      // if (!force && !shouldCheck) return;
+      // set(() => ({
+      //   lastUpdate: Date.now(),
+      // }));
+      // try {
+      //   const remoteId = await getVersion(versionType);
+      //   set(() => ({
+      //     remoteVersion: remoteId,
+      //   }));
+      //   console.log("[Got Upstream] ", remoteId);
+      // } catch (error) {
+      //   console.error("[Fetch Upstream Commit Id]", error);
+      // }
     },
 
     async updateUsage(force = false) {
