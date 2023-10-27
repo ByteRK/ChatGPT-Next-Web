@@ -15,7 +15,7 @@ const en: LocaleType = {
   Auth: {
     Title: "Need Access Code",
     Tips: "Please enter access code below",
-    SubTips: "Or enter your OpenAI API Key",
+    SubTips: "Or enter your API Key",
     Input: "access code",
     Confirm: "Confirm",
     Later: "Later",
@@ -265,7 +265,7 @@ const en: LocaleType = {
     Token: {
       Title: "API Key",
       SubTitle: "Use your key to ignore access code limit",
-      Placeholder: "OpenAI API Key",
+      Placeholder: "API Key",
     },
     Usage: {
       Title: "Account Balance",
