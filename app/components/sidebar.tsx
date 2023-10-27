@@ -147,10 +147,10 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          KK&apos;s ChatGPT
+          KK&apos;s ChatAI
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          努力搬砖版~
+          打工人永远在谋生的路上热爱生活~
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
@@ -209,12 +209,20 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            <a href="http://gptkey.ricken.cn" target="_blank" rel="noopener noreferrer">
+            <a
+              href="http://aiapi.ricken.cn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconButton icon={<MoneyIcon />} shadow />
             </a>
           </div>
           <div className={styles["sidebar-action"]}>
-            <a href="http://ricken.cn" target="_blank" rel="noopener noreferrer">
+            <a
+              href="http://ricken.cn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <IconButton icon={<RickenIcon />} shadow />
             </a>
           </div>

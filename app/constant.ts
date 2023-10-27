@@ -7,7 +7,9 @@ export const RELEASE_URL = `${REPO_URL}/releases`;
 export const FETCH_COMMIT_URL = `https://api.github.com/repos/${OWNER}/${REPO}/commits?per_page=1`;
 export const FETCH_TAG_URL = `https://api.github.com/repos/${OWNER}/${REPO}/tags?per_page=1`;
 export const RUNTIME_CONFIG_DOM = "danger-runtime-config";
-export const DEFAULT_API_HOST = "https://aiapi.ricken.cn";
+
+export const DEFAULT_CORS_HOST = "https://aiapi.ricken.cn";
+export const DEFAULT_API_HOST = `${DEFAULT_CORS_HOST}`;
 
 export enum Path {
   Home = "/",
@@ -116,6 +118,14 @@ export const DEFAULT_MODELS = [
   },
   {
     name: "gpt-3.5-turbo-16k-0613",
+    available: true,
+  },
+  {
+    name: "qwen-turbo",
+    available: true,
+  },
+  {
+    name: "SparkDesk",
     available: true,
   },
 ] as const;
