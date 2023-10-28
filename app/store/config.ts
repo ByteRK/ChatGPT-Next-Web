@@ -27,7 +27,7 @@ export enum Theme {
 
 export const DEFAULT_CONFIG = {
   lastUpdate: Date.now(), // timestamp, to merge state
-  submitKey:isMacOS() ? SubmitKey.MetaEnter : SubmitKey.Enter,
+  submitKey: isMacOS() ? SubmitKey.MetaEnter : SubmitKey.Enter,
   avatar: "1f35f",
   fontSize: 14,
   theme: Theme.Auto as Theme,
@@ -52,7 +52,7 @@ export const DEFAULT_CONFIG = {
     presence_penalty: 0,
     frequency_penalty: 0,
     sendMemory: true,
-    historyMessageCount: 3,
+    historyMessageCount: 5,
     compressMessageLengthThreshold: 1000,
     enableInjectSystemPrompts: true,
     template: DEFAULT_INPUT_TEMPLATE,
