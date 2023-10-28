@@ -27,11 +27,12 @@ export enum Theme {
 
 export const DEFAULT_CONFIG = {
   lastUpdate: Date.now(), // timestamp, to merge state
-  submitKey: isMacOS() ? SubmitKey.MetaEnter : SubmitKey.Enter,
+
+  submitKey: isMacOS() ? SubmitKey.MetaEnter : SubmitKey.CtrlEnter,
   avatar: "1f35f",
   fontSize: 14,
   theme: Theme.Auto as Theme,
-  tightBorder: !getClientConfig()?.isApp,
+  tightBorder: !!getClientConfig()?.isApp,
   sendPreviewBubble: true,
   enableAutoGenerateTitle: false,
   sidebarWidth: DEFAULT_SIDEBAR_WIDTH,
