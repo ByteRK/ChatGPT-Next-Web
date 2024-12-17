@@ -6,9 +6,6 @@ import {
 } from "../constant";
 import { getClientConfig } from "../config/client";
 import { createPersistStore } from "../utils/store";
-import { clientUpdate } from "../utils";
-import ChatGptIcon from "../icons/chatgpt.png";
-import Locale from "../locales";
 import { ClientApi } from "../client/api";
 
 const ONE_MINUTE = 60 * 1000;
@@ -53,7 +50,7 @@ export const useUpdateStore = createPersistStore(
   {
     versionType: "tag" as VersionType,
     lastUpdate: 0,
-    version: "v2.9.9(KK特供版)",
+    version: "v2.15.8(KK特供版)",
     remoteVersion: "",
     used: 0,
     subscription: 0,
@@ -74,16 +71,12 @@ export const useUpdateStore = createPersistStore(
       //   versionType === "date"
       //     ? getClientConfig()?.commitDate
       //     : getClientConfig()?.version;
-
       // set(() => ({ version }));
-
       // const shouldCheck = Date.now() - get().lastUpdate > 2 * 60 * ONE_MINUTE;
       // if (!force && !shouldCheck) return;
-
       // set(() => ({
       //   lastUpdate: Date.now(),
       // }));
-
       // try {
       //   const remoteId = await getVersion(versionType);
       //   set(() => ({
