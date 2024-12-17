@@ -49,7 +49,8 @@ import Locale, {
   changeLang,
   getLang,
 } from "../locales";
-import { copyToClipboard, semverCompare } from "../utils";
+import { copyToClipboard, clientUpdate, semverCompare } from "../utils";
+import Link from "next/link";
 import {
   Anthropic,
   Azure,
@@ -591,10 +592,10 @@ export function Settings() {
   const updateUrl = getClientConfig()?.isApp ? RELEASE_URL : UPDATE_URL;
 
   function checkUpdate(force = false) {
-    // setCheckingUpdate(true);
-    // updateStore.getLatestVersion(force).then(() => {
-    //   setCheckingUpdate(false);
-    // });
+    setCheckingUpdate(true);
+    updateStore.getLatestVersion(force).then(() => {
+      setCheckingUpdate(false);
+    });
 
     console.log("[Update] local version ", updateStore.version);
     console.log("[Update] remote version ", updateStore.remoteVersion);
@@ -1428,15 +1429,15 @@ export function Settings() {
 
           <ListItem
             title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
-            // subTitle={
-            //   checkingUpdate
-            //     ? Locale.Settings.Update.IsChecking
-            //     : hasNewVersion
-            //     ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
-            //     : Locale.Settings.Update.IsLatest
-            // }
+            subTitle={
+              checkingUpdate
+                ? Locale.Settings.Update.IsChecking
+                : hasNewVersion
+                ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
+                : Locale.Settings.Update.IsLatest
+            }
           >
-            {/* {checkingUpdate ? (
+            {checkingUpdate ? (
               <LoadingIcon />
             ) : hasNewVersion ? (
               clientConfig?.isApp ? (
@@ -1456,7 +1457,7 @@ export function Settings() {
                 text={Locale.Settings.Update.CheckUpdate}
                 onClick={() => checkUpdate(true)}
               />
-            )} */}
+            )}
           </ListItem>
 
           <ListItem title={Locale.Settings.SendKey}>
