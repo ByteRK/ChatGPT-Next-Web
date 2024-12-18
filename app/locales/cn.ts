@@ -8,10 +8,12 @@ const cn = {
   Error: {
     Unauthorized: isApp
       ? `😆 对话遇到了一些问题，不用慌:
-       \\ 1️⃣ 点击[这里](/#/settings)检查修改 API Key ⚙️`
+       \\ 1️⃣ 点击[这里](/#/settings)检查修改 API Key ⚙️
+       \\ 2️⃣ 或者点击[这里](http://aiapi.ricken.cn)免费获取API Key 🧙‍♂️`
       : `😆 对话遇到了一些问题，不用慌:
        \ 1️⃣ 点击[这里](/#/auth)输入访问密码 🔑
        \ 2️⃣ 或者点击[这里](/#/settings)检查修改 API Key ⚙️
+       \ 3️⃣ 或者点击[这里](http://aiapi.ricken.cn)免费获取API Key 🧙‍♂️
        `,
   },
   Auth: {
